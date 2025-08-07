@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ứng dụng Phong Thủy Bất Động Sản</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Tra cứu Phong thủy nhà phố & đất nền</h1>
+    <form id="fengshuiForm">
+      <div class="input-group">
+        <label for="birthdate">Ngày sinh:</label>
+        <input type="date" id="birthdate" required />
+      </div>
+      <div class="input-group">
+        <label for="birthhour">Giờ sinh (0-23):</label>
+        <input type="number" id="birthhour" min="0" max="23" required />
+      </div>
+      <div class="input-group">
+        <label for="gender">Giới tính:</label>
+        <select id="gender">
+          <option value="nam">Nam</option>
+          <option value="nu">Nữ</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="yearBuild">Năm xây nhà:</label>
+        <input type="number" id="yearBuild" required />
+      </div>
+      <div class="input-group">
+        <label for="houseDirection">Hướng nhà:</label>
+        <select id="houseDirection">
+          <option value="Bắc">Bắc</option>
+          <option value="Đông">Đông</option>
+          <option value="Nam">Nam</option>
+          <option value="Tây">Tây</option>
+          <option value="Đông Bắc">Đông Bắc</option>
+          <option value="Tây Bắc">Tây Bắc</option>
+          <option value="Đông Nam">Đông Nam</option>
+          <option value="Tây Nam">Tây Nam</option>
+        </select>
+      </div>
+
+      <fieldset class="bad-factors">
+        <legend>Các yếu tố phong thủy xấu</legend>
+        <label><input type="checkbox" id="deadEnd" /> Nhà cuối hẻm cụt</label>
+        <label><input type="checkbox" id="roadAtSide" /> Đường đâm vào hông</label>
+        <label><input type="checkbox" id="nearGraveyard" /> Gần nghĩa địa</label>
+        <label><input type="checkbox" id="nearHospital" /> Gần bệnh viện</label>
+        <label><input type="checkbox" id="nearTemple" /> Gần chùa/miếu</label>
+        <label><input type="checkbox" id="underFlyover" /> Gần cầu vượt/đường cao tốc</label>
+        <label><input type="checkbox" id="houseLowerThanRoad" /> Nhà thấp hơn mặt đường</label>
+        <label><input type="checkbox" id="oppositeBuilding" /> Đối diện cao ốc lớn</label>
+        <label><input type="checkbox" id="blockedFront" /> Mặt tiền bị che</label>
+        <label><input type="checkbox" id="columnOrTreeInFront" /> Có cột điện/cây lớn chắn cửa</label>
+      </fieldset>
+
+      <button type="button" onclick="calculate()">Xem kết quả</button>
+    </form>
+
+    <div id="result" class="result-box"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
